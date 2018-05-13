@@ -23,7 +23,7 @@ class JetWriter
 {
 public:
   // constructor: the writer will create the output dataset in some group
-  JetWriter(H5::Group& output_group);
+  JetWriter(H5::Group&);
 
   // destructor (takes care of flushing output file too)
   ~JetWriter();

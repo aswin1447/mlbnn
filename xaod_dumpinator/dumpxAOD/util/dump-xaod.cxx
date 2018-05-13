@@ -28,8 +28,8 @@ int main (int argc, char *argv[])
   xAOD::TEvent event(xAOD::TEvent::kClassAccess);
 
   // set up output file
-  H5::H5File output("output.h5", H5F_ACC_TRUNC);
-  JetWriter jet_writer(output);
+  // H5::H5File output("output.h5", H5F_ACC_TRUNC);
+  // JetWriter jet_writer(output);
 
   // Loop over the specified files:
   for (int file_n = 1; file_n < argc; ++file_n) {
@@ -61,7 +61,7 @@ int main (int argc, char *argv[])
       assert(event.retrieve(jets, "AntiKt4EMTopoJets").isSuccess());
 
       for (const xAOD::Jet *jet : *jets) {
-        jet_writer.write(*jet);
+        // jet_writer.write(*jet);
       }
 
     } // end event loop
